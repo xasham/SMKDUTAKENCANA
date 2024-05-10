@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1091973761118",
+    "project_id": "dutakencanabe",
+    "storage_bucket": "dutakencanabe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091973761118:android:f975f92745aa3c973f4ccf",
+        "android_client_info": {
+          "package_name": "com.example.smk_duta_kencana"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4b1wHH8h8sRdgPChgPu0wy2ecg0A6hos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

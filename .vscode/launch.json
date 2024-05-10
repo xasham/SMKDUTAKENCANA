@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "program": "lib/router/Run_App.dart",
+            "name": "smk_duta_kencana",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "smk_duta_kencana (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "smk_duta_kencana (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "program": "lib/router/Run_App.dart",
+            "name": "SM S901N",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "emulator-5554",
+        },
+        {
+            "program": "lib/router/Run_App.dart",
+            "name": "TECNO LG7n",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "08990372CO003703",
+        },
+
+
+        
+
+    ],
+    "compounds": [
+        
+        {
+            "program": "lib/router/Run_App.dart",
+            "name": "Compound",
+            "configurations": [
+                "SM S901N",
+                "TECNO LG7n"
+            ]
+        }
+    ]
+}
