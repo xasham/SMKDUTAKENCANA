@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 class ListTiles extends StatelessWidget {
   String? name;
-  ListTiles(this.name);
+  String? title;
+  ListTiles(this.name, this.title);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class ListTiles extends StatelessWidget {
                       style: TextStyle(fontSize: 12, color: HexColor("#3A3181")),
                     ),
                     subtitle: Text(
-                      "Biodata",
+                      title!,
                       style: TextStyle(fontSize: 15, color: HexColor("#343434")),
                     ),
                   ),

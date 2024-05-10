@@ -54,8 +54,8 @@ Widget custoBottomnavbar(BuildContext context){
           destinations: [
           NavigationDestination(icon: Icon(Icons.home), label: "Fasilitas"),
           NavigationDestination(icon: Icon(Icons.article), label: "Artikel"),
-          NavigationDestination(icon: Icon(Icons.pin_drop), label: "Maps"),
-          NavigationDestination(icon: Icon(Icons.supervised_user_circle_sharp), label: "Profil"),
+          // NavigationDestination(icon: Icon(Icons.pin_drop), label: "Maps"),
+          NavigationDestination(icon: Icon(Icons.supervised_user_circle_sharp), label: "Ppdb"),
         ]);
 }
 

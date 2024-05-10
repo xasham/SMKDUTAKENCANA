@@ -6,8 +6,9 @@ import 'package:smk_duta_kencana/component/HeroPageInformation.dart';
 import 'package:smk_duta_kencana/component/TextHeader.dart';
 import 'package:smk_duta_kencana/services/AddUserController.dart';
 
-class Pendaftaran extends GetView<AddUserController>{
+class Pendaftaran extends StatelessWidget{
    
+  
 
   AddUserController controller = Get.put(AddUserController());
   
@@ -76,11 +77,12 @@ class Pendaftaran extends GetView<AddUserController>{
               controller.add(
                   controller.namac.text,
                   controller.alamatc.text,
-                  int.parse(controller.telepon.text),
+                  controller.telepon.text,
                   controller.tanggalc.text,
                   controller.namaorangtuac.text,
                   controller.asalsekolahc.text,
                   controller.alamatsekolahc.text);
+              controller.defaultDailog();
             }),
             SizedBox(
               height: 50,

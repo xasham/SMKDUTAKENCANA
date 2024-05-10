@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 class AddUserController extends GetxController {
   late TextEditingController namac = TextEditingController();
@@ -13,7 +14,7 @@ class AddUserController extends GetxController {
 
   FirebaseFirestore db = FirebaseFirestore.instance;
    bool is_notif = false;
-  void add(String nama, String alamat, int telpon, String tanggal,
+  void add(String nama, String alamat, String telpon, String tanggal,
       String namaorangtua, String asalsekolah, String alamatsekolah) async {
     CollectionReference users = db.collection("user");
   
@@ -30,6 +31,15 @@ class AddUserController extends GetxController {
       clear();
     // is_notif = true;
     // notifyListeners();
+
+    // Get.defaultDialog(
+    //   title: "Halo",
+    //   middleText: "aalal",
+    //   onConfirm: (){
+    //     Get.back();
+    //   }
+
+    // );
      
     } catch (e) {
       print(e);
@@ -56,5 +66,13 @@ class AddUserController extends GetxController {
     asalsekolahc.dispose();
     alamatsekolahc.dispose();
     super.onClose();
+  }
+   void defaultDailog() {
+    Future.delayed(const Duration(seconds: 1), () {
+      print(Get.isDialogOpen);
+    });
+
+    Get.defaultDialog(
+        title: 'GetX alert', middleText: 'Hello, here is dialog in getx');
   }
 }

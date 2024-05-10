@@ -56,17 +56,17 @@ class AppNavigation {
             ),
           ],
         ),
-        StatefulShellBranch(
-          navigatorKey: _shellNavigatorLocation,
-          routes: <RouteBase>[
-            GoRoute(
-              path: APP_PAGE.location.toPath,
-              name: APP_PAGE.location.name,
-              builder: (BuildContext context, GoRouterState state) =>
-                  Location(),
-            ),
-          ],
-        ),
+        // StatefulShellBranch(
+        //   navigatorKey: _shellNavigatorLocation,
+        //   routes: <RouteBase>[
+        //     GoRoute(
+        //       path: APP_PAGE.location.toPath,
+        //       name: APP_PAGE.location.name,
+        //       builder: (BuildContext context, GoRouterState state) =>
+        //           Location(),
+        //     ),
+        //   ],
+        // ),
         StatefulShellBranch(
           navigatorKey: _shellNavigatorUserSetting,
           routes: <RouteBase>[
