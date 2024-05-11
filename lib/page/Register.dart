@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:smk_duta_kencana/component/Button.dart';
 import 'package:smk_duta_kencana/component/FormFields.dart';
@@ -7,6 +7,7 @@ import 'package:smk_duta_kencana/component/FormFields.dart';
 import 'package:smk_duta_kencana/component/TextHeader.dart';
 import 'package:smk_duta_kencana/component/TextConfirmation.dart';
 import 'package:smk_duta_kencana/data/DataText.dart';
+import 'package:smk_duta_kencana/page/example.dart';
 import 'package:smk_duta_kencana/services/AuthController.dart';
 import 'package:smk_duta_kencana/services/RegisterController.dart';
 
@@ -57,11 +58,13 @@ class _RegisterState extends State<Register> {
                     // SizedBox(
                     //   height: 12,
                     // ),
-                    FormFields("Email", false, widget.emailc, keytwo, keyone),
+                    FormFields(
+                        "Email", false, widget.reg.emailc, keytwo, keyone),
                     SizedBox(
                       height: 12,
                     ),
-                    FormFields("Kata Sandi", true, widget.passc, keytwo, keyone),
+                    FormFields(
+                        "Kata Sandi", true, widget.reg.passc, keytwo, keyone),
                     SizedBox(
                       height: 12,
                     ),
@@ -71,14 +74,37 @@ class _RegisterState extends State<Register> {
                       height: 24,
                     ),
                     Button(
-                        "Register dan masuk",
-                       () {
+                      "Register dan masuk",
+                      () {
                         if (keyone.currentState!.validate() |
                             keytwo.currentState!.validate()) {
-                          model.login(widget.reg.emailc.text,
-                              widget.reg.passc.text, context);
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return example(
+                                    "konfirmasi",
+                                    Text(
+                                        'Apakah anda ingin mendaftarkan akun?'),
+                                    [
+                                      TextButton(
+                                        onPressed: () {
+                                          context.pop();
+                                        },
+                                        child: Text("Tidak"),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          context.pop();
+                                          model.register(widget.reg.emailc.text,
+                                              widget.reg.passc.text, context);
+                                        },
+                                        child: Text("Oke"),
+                                      ),
+                                    ]);
+                              });
                         }
-                      },),
+                      },
+                    ),
                     SizedBox(
                       height: 12,
                     ),

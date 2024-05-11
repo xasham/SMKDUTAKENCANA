@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:smk_duta_kencana/component/Button.dart';
 import 'package:smk_duta_kencana/component/FormFields.dart';
 import 'package:smk_duta_kencana/component/TextHeader.dart';
 import 'package:smk_duta_kencana/component/TextConfirmation.dart';
 import 'package:smk_duta_kencana/data/DataText.dart';
+import 'package:smk_duta_kencana/page/example.dart';
 import 'package:smk_duta_kencana/services/AuthController.dart';
 import 'package:smk_duta_kencana/services/LoginController.dart';
 
@@ -25,7 +27,6 @@ class _LoginState extends State<Login> {
   String textHeader = TEXT.login.textHeader;
   final keytwo = GlobalKey<FormState>();
   final keyone = GlobalKey<FormState>();
-
 
   @override
   Widget build(BuildContext context) {
@@ -68,8 +69,33 @@ class _LoginState extends State<Login> {
                       () {
                         if (keyone.currentState!.validate() |
                             keytwo.currentState!.validate()) {
-                          model.login(widget.logincontroller.emailc.text,
-                              widget.logincontroller.passc.text, context);
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return example(
+                                    "konfirmasi",
+                                    Text(
+                                        'Apakah anda ingin masuk ke aplikasi?'),
+                                    [
+                                      TextButton(
+                                        onPressed: () {
+                                          context.pop();
+                                        },
+                                        child: Text("Tidak"),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          context.pop();
+                                          model.login(
+                                              widget
+                                                  .logincontroller.emailc.text,
+                                              widget.logincontroller.passc.text,
+                                              context);
+                                        },
+                                        child: Text("Oke"),
+                                      ),
+                                    ]);
+                              });
                         }
                       },
                     ),
